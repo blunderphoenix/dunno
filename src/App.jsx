@@ -35,7 +35,7 @@ export default function App() {
   }
 
   function startToggle() {
-    setStart(true)
+    setStart(prevStart => !prevStart)
   }
 
   return (
@@ -46,7 +46,7 @@ export default function App() {
           <section id="setup">
             <div id="entry-forms">
               <form id="name-entry" action={enterName}>
-                <label for="name-field">
+                <label htmlFor="name-field">
                   Enter Name:
                 </label>
                 <input
@@ -58,7 +58,7 @@ export default function App() {
                 <button id="name-submit" aria-label="Submit name">Submit</button>
               </form>
               <form id="room-entry" action={enterRoom}>
-                <label for="room-field">
+                <label htmlFor="room-field">
                   Enter Room:
                 </label>
                 <input
@@ -75,9 +75,11 @@ export default function App() {
               {username ? <p>Name: {username}</p> : null}
               {room ? <p>Room ID: {room}</p> : null}
             </div>
-            {/* <div id="start-container">
-              <button id="start-button" aria-label="Start" action={startToggle}>Start!</button>
-            </div> */}
+            {username && room ?
+              <div id="start-container">
+                <button id="start-button" aria-label="Start" onClick={startToggle}>Start!</button>
+              </div>
+              : null}
           </section>
         }
       </main>
