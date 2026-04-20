@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
+import activities from "./activities"
 import Header from "./components/Header"
 import Slider from "./components/Slider"
-import Results from "./components/Results"
 
 export default function App() {
   const [username, setUsername] = useState('')
@@ -20,57 +20,37 @@ export default function App() {
     return setRoom(result)
   }
 
-  function enterName(formData) {
-    const addName = formData.get('username')
-    if (addName) {
-      setUsername(addName)
-    }
-  }
-
-  function enterRoom(formData) {
-    const addRoomId = formData.get('room')
-    if (addRoomId) {
-      setRoom(addRoomId.toUpperCase())
-    }
-  }
-
   function startToggle() {
     setStart(prevStart => !prevStart)
   }
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault()
+    const data = new FormData(event.currentTarget)
+    setUsername(data.get('username'))
+    setRoom(data.get('room'))
+  }
+
 
   return (
     <>
       <Header />
       <main>
-        {start ? <Slider /> :
+        {start ? <Slider key={activities.id} activities={activities} username={username} /> :
           <section id="setup">
-            <div id="entry-forms">
-              <form id="name-entry" action={enterName}>
-                <label htmlFor="name-field">
-                  Enter Name:
-                </label>
-                <input
-                  id="name-field"
-                  type="text"
-                  aria-label="Enter name"
-                  name="username"
-                />
-                <button id="name-submit" aria-label="Submit name">Submit</button>
-              </form>
-              <form id="room-entry" action={enterRoom}>
-                <label htmlFor="room-field">
-                  Enter Room:
-                </label>
-                <input
-                  id="room-field"
-                  type="text"
-                  aria-label="Enter room"
-                  name="room"
-                />
-                <button id="room-submit" aria-label="Submit room">Submit</button>
-              </form>
-              <button id="create-room" aria-label="Create Room" onClick={createRoom}>Create Room</button>
-            </div>
+            <form id="entry-form" onSubmit={handleFormSubmit}>
+              <div id="entry-fields">
+                <label htmlFor="name-field">Enter Name:</label>
+                <input id="name-field" type="text" name="username" required />
+                <label htmlFor="room-field">Enter Room:</label>
+                <input id="room-field" type="text" name="room" />
+              </div>
+              <div className="button-group">
+                <button type="submit" id="join-room">Join Room</button>
+                <button type="button" id="create-room" onClick={createRoom}>Create New Room</button>
+              </div>
+            </form>
+
             <div id="entry-display">
               {username ? <p>Name: {username}</p> : null}
               {room ? <p>Room ID: {room}</p> : null}

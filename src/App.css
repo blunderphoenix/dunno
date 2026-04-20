@@ -1,6 +1,8 @@
 h1,
+h2,
 p,
 label,
+li,
 button {
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
@@ -20,23 +22,62 @@ button {
   padding: 0.5rem;
 }
 
-#entry-forms {
+#entry-fields {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+#entry-display {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-
-  >form {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 0.5rem;
-    align-items: center;
-  }
+  margin-top: 2rem;
 }
 
-#create-room {
-  width: max-content;
+.button-group {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 #start-button {
   margin-top: 2rem;
+}
+
+.activity-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid black;
+  min-height: 10rem;
+
+  .activity-category {
+    text-transform: capitalize;
+    font-style: italic;
+  }
+}
+
+.decision-buttons {
+  display: flex;
+
+  button {
+    width: 100%;
+  }
+}
+
+.accepted-list {
+  margin-top: 3rem;
+
+  li {
+    margin-bottom: 1rem;
+  }
+}
+
+.card-count,
+.activity-category {
+  font-size: 0.7rem;
 }
