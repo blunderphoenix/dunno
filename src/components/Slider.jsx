@@ -22,12 +22,10 @@ export default function Slider(props) {
 
         setUsedIndices(prevUsed => [...prevUsed, randomIndex])
         setCurrentActivity(props.activities[randomIndex])
-        console.log(currentActivity)
     }
 
     function addActivity() {
         setAcceptedActivies(prevAccepted => [...prevAccepted, currentActivity])
-        console.log(acceptedActivies)
     }
 
     return (
