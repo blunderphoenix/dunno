@@ -9,6 +9,13 @@ button {
   text-box: trim-both cap alphabetic;
 }
 
+#root {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+
 header {
   padding: 1rem 0;
   display: flex;
@@ -78,6 +85,18 @@ button {
 }
 
 .card-count,
-.activity-category {
+.activity-category,
+.credit {
   font-size: 0.7rem;
+}
+
+.credit {
+  position: absolute;
+  bottom: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  #root {
+    width: 100%;
+  }
 }

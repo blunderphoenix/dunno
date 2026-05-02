@@ -62,6 +62,7 @@ export default function App() {
               : null}
           </section>
         }
+        <p className="credit">Made by <a href="https://mteh.ca" target="_blank" rel="noopener">Michael Teh</a></p>
       </main>
     </>
   )
