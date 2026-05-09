@@ -10,7 +10,7 @@ import Footer from "./components/Footer"
 export default function App() {
   const [groupName, setGroupName] = useState("Supergroup")
   const [groupNumber, setGroupNumber] = useState(100)
-  const [location, setLocation] = useState(["indoor", "outdoor"])
+  const [location, setLocation] = useState([])
   const [cost, setCost] = useState("$$$")
 
   const handleFormSubmit = (event) => {
@@ -19,14 +19,17 @@ export default function App() {
 
     const newGroupName = data.get("group-name")
     const newGroupNumber = data.get("group-number")
-    const newlocation = data.get("activity-location")
+    const newLocation = data.get("activity-location")
     const newCost = data.get("group-spend")
 
     newGroupName ? setGroupName(newGroupName) : null
     newGroupNumber ? setGroupNumber(newGroupNumber) : null
-    newlocation ? setLocation(newlocation) : null
+    if (newLocation == "Indoor or outdoor") {
+      setLocation(["Indoor", "Outdoor"])
+    } else {
+      setLocation([newLocation])
+    }
     newCost ? setCost(newCost) : null
-    console.log(groupName, groupNumber, location, cost)
   }
 
   return (
@@ -45,7 +48,7 @@ export default function App() {
                     <input id="group-number-field" type="number" name="group-number"></input>
                     <label htmlFor="activity-location-field">Are you looking for an indoor or outdoor activity?</label>
                     <select id="activity-location-field" name="activity-location">
-                      <option value={["indoor", "outdoor"]}>Indoor or outdoor</option>
+                      <option>Indoor or outdoor</option>
                       <option>Indoor</option>
                       <option>Outdoor</option>
                     </select>
