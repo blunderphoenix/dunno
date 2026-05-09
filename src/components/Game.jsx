@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Results from "./Results"
 
-export default function Slider(props) {
+export default function Game(props) {
 
     const initialRandomIndex = Math.floor(Math.random() * props.activities.length)
 
