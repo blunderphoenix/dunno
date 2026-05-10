@@ -40,6 +40,7 @@ button {
   row-gap: 0.7rem;
   input, select {
     margin-bottom: 2rem;
+    font-size: 1rem;
   }
   select {
     text-transform: capitalize;
