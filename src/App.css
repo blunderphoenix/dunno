@@ -32,6 +32,9 @@ header {
 
 button {
   padding: 0.5rem;
+  background-color: grey;
+  border-radius: 0;
+  border: 1px darkgray solid;
 }
 
 #setup-form {
@@ -41,6 +44,10 @@ button {
   input, select {
     margin-bottom: 2rem;
     font-size: 1rem;
+    border-radius: 0;
+    background-color: white;
+    border: 1px lightgrey solid;
+    font-family: 'Courier New', Courier, monospace;
   }
   select {
     text-transform: capitalize;
