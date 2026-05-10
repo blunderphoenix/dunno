@@ -32,9 +32,9 @@ header {
 
 button {
   padding: 0.5rem;
-  background-color: grey;
+  background-color: lightgray;
   border-radius: 0;
-  border: 1px darkgray solid;
+  border: 1px grey solid;
 }
 
 #setup-form {
