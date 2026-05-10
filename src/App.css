@@ -36,6 +36,7 @@ button {
   border-radius: 0;
   border: 1px grey solid;
   color: black;
+  font-weight: 700;
 }
 
 #setup-form {
