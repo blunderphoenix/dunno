@@ -13,7 +13,7 @@ export default function Header() {
 &nbsp; ░░░░░░░░   ░░░░░░░░ ░░░░ ░░░░░ ░░░░ ░░░░░  ░░░░░░  <br/>
             </pre></div>
             <p className="ascii-alt">Helping friends choose</p>
-            <div className="ascii ascii-subheader" aria-hidden="true"><pre>
+            <div className="ascii" aria-hidden="true"><pre className="ascii-subheader">
 &nbsp;╻ ╻┏━╸╻  ┏━┓╻┏┓╻┏━╸   ┏━╸┏━┓╻┏━╸┏┓╻╺┳┓┏━┓   ┏━╸╻ ╻┏━┓┏━┓┏━┓┏━╸<br/>
 &nbsp;┣━┫┣╸ ┃  ┣━┛┃┃┗┫┃╺┓   ┣╸ ┣┳┛┃┣╸ ┃┗┫ ┃┃┗━┓   ┃  ┣━┫┃ ┃┃ ┃┗━┓┣╸ <br/>
 &nbsp;╹ ╹┗━╸┗━╸╹  ╹╹ ╹┗━┛   ╹  ╹┗╸╹┗━╸╹ ╹╺┻┛┗━┛   ┗━╸╹ ╹┗━┛┗━┛┗━┛┗━╸<br/>
