@@ -129,7 +129,7 @@ footer {
   #root {
     width: 100%;
   }
-  .ascii {
+  .ascii, header pre.ascii-subheader {
     font-size: 0.5rem;
   }
 }
