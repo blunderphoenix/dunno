@@ -39,6 +39,10 @@ header {
   .ascii-alt {
     display: none;
   }
+  .ascii-subheader {
+    font-family: consolas, monospace;
+    font-size: 13px;
+  }
 }
 
 button {
